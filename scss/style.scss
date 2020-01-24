@@ -1,0 +1,25 @@
+@import "variables";
+@import "mixins/mixins";
+
+* {
+	font-family: $primary-font;
+}
+
+body {
+  background-color: $black;
+}
+
+/* Init SASS */
+
+.container {
+
+  .title {
+		font-size: $text-size;
+	}
+
+	.animation {
+		// mixing
+		@include transform(rotate(30deg));
+	}
+	
+}
