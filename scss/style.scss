@@ -1,25 +1,46 @@
-@import "variables";
+// helpers
+// tanto variables quanto mixins podem tá dentro de helpers
+@import "helpers/variables";
 @import "mixins/mixins";
 
-* {
-	font-family: $primary-font;
-}
+
+// modules
+
 
 body {
   background-color: $black;
 }
 
-/* Init SASS */
+// Init SASS
 
 .container {
 
   .title {
-		font-size: $text-size;
+		font-size: $title-size;
+		color: $white;
 	}
 
 	.animation {
-		// mixing
+		// mixins
 		@include transform(rotate(30deg));
 	}
-	
+
+	.content {
+		// operations
+		width: calc(100px - 50px);
+	}
+
+	// extends
+	%flexbox {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+
+	.sidebar-left {
+		@extend %flexbox;
+		color: $white;
+	}
+
+
 }

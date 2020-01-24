@@ -1,0 +1,22 @@
+body {
+  background-color: #000; }
+
+.container .title {
+  font-size: 2em;
+  color: #fff; }
+
+.container .animation {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg); }
+
+.container .content {
+  width: calc(); }
+
+.container .sidebar-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; }
+
+.container .sidebar-left {
+  color: #fff; }

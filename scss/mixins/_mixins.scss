@@ -3,3 +3,7 @@
   -ms-transform: $property;
   transform: $property;
 }
+
+@mixin sectionPadding($value) {
+	padding: $value 0;
+}

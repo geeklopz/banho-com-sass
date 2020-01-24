@@ -4,17 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compile:sass": "node-sass scss/style.scss css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/geeklopz/banho-com-sass.git"
   },
-  "keywords": ["sass", "scss", "style", "css"],
+  "keywords": [
+    "sass",
+    "scss",
+    "style",
+    "css"
+  ],
   "author": "Danilo Caetano <danilocaetano.com.br>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/geeklopz/banho-com-sass/issues"
   },
-  "homepage": "https://github.com/geeklopz/banho-com-sass#readme"
+  "homepage": "https://github.com/geeklopz/banho-com-sass#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
 }

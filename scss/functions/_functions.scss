@@ -1,0 +1,12 @@
+$colors: (
+    primary: #000,
+    disabled: #ccc
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+.style {
+    background-color: map-get($colors, primary); // #000
+}
