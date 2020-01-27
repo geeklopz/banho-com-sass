@@ -1,3 +1,33 @@
+* {
+  font-family: Helvetica; }
+
+.style {
+  background-color: #000; }
+
+.theme-light body {
+  background-color: #fff; }
+
+.theme-dark body {
+  background-color: #000; }
+
+.color-light body {
+  background-color: #ffffff; }
+
+.color-light .header {
+  background-color: #23aad0; }
+
+.color-light .menu a {
+  background-color: #cccccc; }
+
+.color-dark body {
+  background-color: #000000; }
+
+.color-dark .header {
+  background-color: #414141; }
+
+.color-dark .menu a {
+  background-color: #ffffff; }
+
 body {
   background-color: #000; }
 
