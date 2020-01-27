@@ -11,7 +11,7 @@ body {
   transform: rotate(30deg); }
 
 .container .content {
-  width: calc(); }
+  width: calc(100px - 50px); }
 
 .container .sidebar-left {
   display: flex;

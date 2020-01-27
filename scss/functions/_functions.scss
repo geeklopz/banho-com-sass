@@ -1,12 +1,77 @@
+// function e mixin são bem parecidos no propósito
+// function retornar um valor único
+// numbers, string, colors, booleans, lists (arrays)
+
+// list of colors - array
 $colors: (
-    primary: #000,
-    disabled: #ccc
+  primary: #000,
+  secondary: #ccc
 );
 
+// function return color of list
 @function color($color-name) {
+		// map-get pega o valor especifico de cada variável
     @return map-get($colors, $color-name)
-}
+};
 
+// aplicando a function
 .style {
     background-color: map-get($colors, primary); // #000
+}
+
+// ------------------------------
+// Dark Mode
+// ------------------------------
+
+// array of colors
+$cores: (
+	light: #fff,
+	dark: #000
+);
+
+// function
+// $theme = key
+// $color = value hex
+// @each busca e aplica o bloco css
+@each $theme, $color in $cores {
+	.theme-#{$theme} body {
+		background-color: $color;
+	}
+}
+
+// Block of code @each
+
+$cores2: (
+  light: (
+    color1: #ffffff, 
+    color2: #23aad0,
+    color3: #cccccc
+  ),
+  dark: (
+    color1: #000000, 
+    color2: #414141,
+    color3: #ffffff
+  )
+);
+
+@each $tema, $cor in $cores2 {
+  // varrendo array e atribuindo valores nas variaveis
+  $color1: map-get($cor, color1);
+  $color2: map-get($cor, color2);
+  $color3: map-get($cor, color3);
+
+  // apply block
+  .color-#{$tema} {
+
+    body {
+      background-color: $color1;
+    }
+    .header {
+      background-color: $color2;
+    }
+    .menu a {
+      background-color: $color3;
+    }
+  }
+  
 }
