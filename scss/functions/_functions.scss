@@ -10,13 +10,13 @@ $colors: (
 
 // function return color of list
 @function color($color-name) {
-		// map-get pega o valor especifico de cada variável
-    @return map-get($colors, $color-name)
+	// map-get pega o valor especifico de cada variável
+   @return map-get($colors, $color-name)
 };
 
 // aplicando a function
 .style {
-    background-color: map-get($colors, primary); // #000
+  background-color: map-get($colors, primary); // #000
 }
 
 // ------------------------------
@@ -39,23 +39,26 @@ $cores: (
 	}
 }
 
-// Block of code @each
+// ------------------------------
+// Array with @each
+// ------------------------------
 
 $cores2: (
   light: (
-    color1: #ffffff, 
+    color1: #ffffff,
     color2: #23aad0,
     color3: #cccccc
   ),
   dark: (
-    color1: #000000, 
+    color1: #000000,
     color2: #414141,
     color3: #ffffff
   )
 );
 
 @each $tema, $cor in $cores2 {
-  // varrendo array e atribuindo valores nas variaveis
+	// varrendo array e atribuindo valores nas variaveis
+	// map-get pega o valor especifico de cada variável
   $color1: map-get($cor, color1);
   $color2: map-get($cor, color2);
   $color3: map-get($cor, color3);
@@ -73,5 +76,23 @@ $cores2: (
       background-color: $color3;
     }
   }
-  
+
+}
+
+// ------------------------------
+// Loop with @for
+// ------------------------------
+
+$max: 20;
+
+@for $i from 1 through $max {
+
+  $calc: 100% / $i;
+
+  // block of code
+  // scape variable #{$variable}
+  #div.container-#{$i} {
+    width: $calc;
+  }
+
 }
