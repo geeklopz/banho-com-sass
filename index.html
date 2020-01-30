@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="theme--dark">
+<html lang="en" class="theme--light">
 
 <head>
 	<meta charset="UTF-8">
@@ -12,15 +12,38 @@
 <body>
 	<div class="container">
 
-		<h1>Banho com SASS</h1>
+		<h1>🛁 Banho com SASS! 🛁</h1>
 
 		<div class="toggle-container">
 			<input type="checkbox" name="theme" id="switch">
 			<label for="switch">Toggle</label>
 		</div>
 
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsam laborum consequatur voluptates quo iure quam fugit rem totam vero vel aut aperiam, vitae nemo quos corporis error assumenda.</p>
+		<p>Já pensou em "programar" em CSS? Sim, PROGRAMAR! Isso é possível com SASS, e nesse curso abordaremos o que é essa ferramenta e o quanto ele é importante para deixar o seu CSS mais dinâmico, profissional e rápido.</p>
 	</div>
+
+	<script>
+		const checkbox = document.querySelector('input[name=theme]');
+		const element = document.querySelector('html');
+
+		checkbox.addEventListener('change', function() {
+			if(this.checked) {
+				trans();
+				element.classList.replace('theme--light', 'theme--dark');
+			} else {
+				trans();
+				element.classList.replace('theme--dark', 'theme--light');
+			}
+		});
+
+		let trans = () => {
+			document.documentElement.classList.add('transition');
+			window.setTimeout(() => {
+				document.documentElement.classList.remove('transition');
+			}, 1000)
+		}
+	</script>
+
 </body>
 
 </html>

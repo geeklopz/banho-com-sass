@@ -7,8 +7,10 @@ html {
 	font-family: $primary-font;
 
 	display: flex;
+	flex-direction: column;
+	align-content: center;
 	align-items: center;
-	justify-items: center;
+	justify-content: center;
 }
 
 // default theme light
@@ -24,6 +26,8 @@ body {
 	@include themed() {
 		background-color: t(bg-panel);
 	}
+
+	width: 50vw;
 
 	margin: 5em;
 	padding: 5em;
@@ -51,7 +55,6 @@ body {
 		line-height: 1.8em;
 		margin-top: 2em;
 	}
-
 }
 
 // toggle button
@@ -71,19 +74,19 @@ label {
 	float: right;
 	border-radius: 100px;
 	position: relative;
+	margin-top: 10px;
+}
 
-	&:after {
-		content: '';
-		position: absolute;
-		top: 3px;
-		left: 3px;
-		width: 20px;
-		height: 20px;
-		background: #fff;
-		border-radius: 90px;
-		transition: 0.3s;
-	}
-
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
 }
 
 input:checked + label {
@@ -92,11 +95,21 @@ input:checked + label {
 	}
 }
 
-input:checked + label:checked {
+input:checked + label:after {
 	left: calc(100% - 5px);
 	transform: translateX(-100%);
 }
 
-label:active::after {
+label:active:after {
 	width: 45px;
+}
+
+// transition
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+	transition: all 750ms !important;
+	transition-delay: 0 !important;
 }

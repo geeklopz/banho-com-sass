@@ -2,8 +2,10 @@ html {
   height: 100%;
   font-family: Helvetica;
   display: flex;
+  flex-direction: column;
+  align-content: center;
   align-items: center;
-  justify-items: center; }
+  justify-content: center; }
 
 .theme--light body {
   background-color: #FCFCFC; }
@@ -12,6 +14,7 @@ html {
   background-color: #333333; }
 
 .container {
+  width: 50vw;
   margin: 5em;
   padding: 5em;
   border-radius: 15px;
@@ -52,16 +55,17 @@ label {
   float: right;
   border-radius: 100px;
   position: relative; }
-  label:after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 90px;
-    transition: 0.3s; }
+
+label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s; }
 
 .theme--light input:checked + label {
   background: #0077FF; }
@@ -69,9 +73,16 @@ label {
 .theme--dark input:checked + label {
   background: #3694FF; }
 
-input:checked + label:checked {
+input:checked + label:after {
   left: calc(100% - 5px);
   transform: translateX(-100%); }
 
-label:active::after {
+label:active:after {
   width: 45px; }
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important; }
