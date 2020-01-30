@@ -1,3 +1,5 @@
+@import "../helpers/variables";
+
 @mixin transform($property) {
   -webkit-transform: $property;
   -ms-transform: $property;
@@ -7,3 +9,35 @@
 @mixin sectionPadding($value) {
 	padding: $value 0;
 }
+
+
+// --------------------
+// Change Theme
+// --------------------
+
+@mixin themed() {
+
+  @each $theme, $map in $colors-themes {
+
+    .theme--#{$theme} & {
+
+			$theme-map: () !global; // variavel global
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($colors-themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+			}
+
+			// diretiva que permite passar bloco de conteudo para o mixin
+			@content;
+			$theme-map: null !global;
+
+    }
+	}
+
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+

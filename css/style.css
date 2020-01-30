@@ -1,52 +1,77 @@
-* {
-  font-family: Helvetica; }
-
-.style {
-  background-color: #000; }
-
-.theme-light body {
-  background-color: #fff; }
-
-.theme-dark body {
-  background-color: #000; }
-
-.color-light body {
-  background-color: #ffffff; }
-
-.color-light .header {
-  background-color: #23aad0; }
-
-.color-light .menu a {
-  background-color: #cccccc; }
-
-.color-dark body {
-  background-color: #000000; }
-
-.color-dark .header {
-  background-color: #414141; }
-
-.color-dark .menu a {
-  background-color: #ffffff; }
-
-body {
-  background-color: #000; }
-
-.container .title {
-  font-size: 2em;
-  color: #fff; }
-
-.container .animation {
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  transform: rotate(30deg); }
-
-.container .content {
-  width: calc(100px - 50px); }
-
-.container .sidebar-left {
+html {
+  height: 100%;
+  font-family: Helvetica;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start; }
+  align-items: center;
+  justify-items: center; }
 
-.container .sidebar-left {
-  color: #fff; }
+.theme--light body {
+  background-color: #FCFCFC; }
+
+.theme--dark body {
+  background-color: #333333; }
+
+.container {
+  margin: 5em;
+  padding: 5em;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between; }
+  .theme--light .container {
+    background-color: #EBEBEB; }
+  .theme--dark .container {
+    background-color: #434343; }
+  .container h1 {
+    margin: 0; }
+    .theme--light .container h1 {
+      color: #0077FF; }
+    .theme--dark .container h1 {
+      color: #3694FF; }
+  .container p {
+    font-size: 1em;
+    line-height: 1.8em;
+    margin-top: 2em; }
+    .theme--light .container p {
+      color: #333333; }
+    .theme--dark .container p {
+      color: #B5B5B5; }
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden; }
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: grey;
+  float: right;
+  border-radius: 100px;
+  position: relative; }
+  label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s; }
+
+.theme--light input:checked + label {
+  background: #0077FF; }
+
+.theme--dark input:checked + label {
+  background: #3694FF; }
+
+input:checked + label:checked {
+  left: calc(100% - 5px);
+  transform: translateX(-100%); }
+
+label:active::after {
+  width: 45px; }

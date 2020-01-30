@@ -1,0 +1,5 @@
+@import "../helpers/variables";
+
+@function color($theme, $color) {
+	@return map-get(map-get($colors-themes, $theme), $color);
+};
