@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/geeklopz/banho-com-sass#readme",
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
